@@ -1,41 +1,28 @@
 <!DOCTYPE html>
-
 <html lang="en">
-
 <head>
-
- <meta charset="UTF-8">
-
- <title>Custom Dino Game</title>
-
- <link rel="stylesheet" href="style.css">
-
+  <meta charset="UTF-8">
+  <title>Custom Dino Game</title>
+  <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
+  <h1>■ Custom Dino Game</h1>
+  <p>Press <b>SPACE</b> to jump</p>
 
-<h1>■ Custom Dino Game</h1>
+  <div id="game">
+    <!-- ✅ Sprite dino (div, not img) -->
+    <div id="dino"></div>
 
-<p>Press <b>SPACE</b> to jump</p>
+    <!-- obstacle still image -->
+    <img src="assets/cactus.png" id="cactus">
+  </div>
 
-<div id="game">
+  <h2 id="score">Score: 0</h2>
 
- <img src="assets/dino.png" id="dino">
+  <audio id="jumpSound" src="audio/jump.wav"></audio>
+  <audio id="hitSound" src="audio/hit.wav"></audio>
+  <audio id="bgMusic" src="audio/bg.mp3" loop></audio>
 
- <img src="assets/cactus.png" id="cactus">
-
-</div>
-
-<h2 id="score">Score: 0</h2>
-
-<audio id="jumpSound" src="audio/jump.wav"></audio>
-
-<audio id="hitSound" src="audio/hit.wav"></audio>
-
-<audio id="bgMusic" src="audio/bg.mp3" loop></audio>
-
-<script src="script.js"></script>
-
+  <script src="script.js"></script>
 </body>
-
 </html>
