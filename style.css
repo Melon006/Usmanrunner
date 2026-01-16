@@ -1,35 +1,64 @@
 body {
- text-align: center;
- font-family: Arial, sans-serif;
- background: #f7f7f7;
+  text-align: center;
+  font-family: Arial, sans-serif;
+  background: #f7f7f7;
 }
+
 #game {
- position: relative;
- width: 800px;
- height: 200px;
- margin: auto;
- background-image: url("assets/ground.png");
- background-repeat: repeat-x;
- overflow: hidden;
- border: 2px solid black;
+  position: relative;
+  width: 800px;
+  height: 200px;
+  margin: auto;
+  background-image: url("assets/ground.png");
+  background-repeat: repeat-x;
+  overflow: hidden;
+  border: 2px solid black;
 }
+
+/* ✅ DINO SPRITE */
 #dino {
- position: absolute;
- bottom: 10px;
- left: 50px;
- width: 60px;
+  position: absolute;
+  bottom: 10px;
+  left: 50px;
+
+  width: 60px;        /* one frame width */
+  height: 60px;       /* frame height */
+
+  background-image: url("assets/dino-sprite.png");
+  background-repeat: no-repeat;
+  background-size: 120px 60px; /* 2 frames: 60 + 60 */
+
+  /* ✅ running animation */
+  animation: run 0.25s steps(2) infinite;
 }
+
+/* ✅ cactus */
 #cactus {
- position: absolute;
- bottom: 10px;
- right: -60px;
- width: 40px;
+  position: absolute;
+  bottom: 10px;
+  right: -60px;
+  width: 40px;
 }
+
+/* ✅ Jump animation */
 .jump {
- animation: jump 0.5s linear;
+  animation: jump 0.5s linear;
 }
+
+/* ✅ BONUS: stop run while jumping */
+.jumpStopRun {
+  animation: none !important;
+}
+
+/* ✅ Running frames switch */
+@keyframes run {
+  from { background-position: 0 0; }
+  to   { background-position: -120px 0; }
+}
+
+/* ✅ Jump up and down */
 @keyframes jump {
- 0% { bottom: 10px; }
- 50% { bottom: 120px; }
- 100% { bottom: 10px; }
+  0%   { bottom: 10px; }
+  50%  { bottom: 120px; }
+  100% { bottom: 10px; }
 }
